@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  webapp:
+    build:
+      context: .
+    environment:
+      - REVIEW_API=http://review.gabbar-dev.svc.cluster.local
+    ports:
+      - "4200:4200"
