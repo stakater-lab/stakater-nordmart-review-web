@@ -1,6 +1,6 @@
 import React from 'react';
 import {useRouteMatch} from "react-router";
-import {Box, Container} from "@material-ui/core";
+import {Box, Container, Typography} from "@material-ui/core";
 import {PRODUCTS} from "../product/ProductDTO";
 import {Product} from "../product/product";
 
@@ -9,6 +9,10 @@ export const Reviews = () => {
 
   return (
     <Container maxWidth="lg">
+      <Box paddingTop={10}>
+        <Typography color="primary" variant="h4">Reviews</Typography>
+      </Box>
+
       <Box paddingY={10}>
         {PRODUCTS.map(p => (<Product key={p.itemId} product={p} showReviews={p.itemId === id}/>))}
       </Box>
