@@ -5,6 +5,6 @@ services:
     build:
       context: .
     environment:
-      - REVIEW_API=http://review.gabbar-dev.svc.cluster.local
+      - REVIEW_API=https://review-gabbar-dev.apps.devtest.41b996e9.kubeapp.cloud
     ports:
       - "8080:4200"

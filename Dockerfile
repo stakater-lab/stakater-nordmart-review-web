@@ -13,10 +13,6 @@ COPY . .
 # install dependencies
 RUN npm ci
 
-# build parameters
-ARG REVIEW_API
-ARG REVIEW_API
-
 # build the application
 RUN npm run build
 

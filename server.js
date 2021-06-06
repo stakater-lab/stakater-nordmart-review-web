@@ -20,6 +20,32 @@ server.use("/api/review", createProxyMiddleware({
   logLevel: "info",
 }));
 
-server.listen(4200, () => {
-  console.log(`Page served at: http://localhost:4200`);
+const serverInstance = server.listen(4200, () => {
+  console.log(`Server is up ...`);
 });
+
+let connections = [];
+
+server.on("connection", (connection) => {
+  connections.push(connection);
+  connection.on("close", () => (connections = connections.filter((curr) => curr !== connection)));
+});
+
+const shutDown = () => {
+  console.log("Shutting down...");
+  serverInstance.close(() => {
+    console.log("Closed out remaining connections");
+    process.exit(0);
+  });
+
+  setTimeout(() => {
+    console.error("Could not close connections in time, Force shutting down...");
+    process.exit(1);
+  }, 10000);
+
+  connections.forEach((curr) => curr.end());
+  setTimeout(() => connections.forEach((curr) => curr.destroy()), 5000);
+};
+
+process.on("SIGTERM", shutDown);
+process.on("SIGINT", shutDown);
