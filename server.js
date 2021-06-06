@@ -13,6 +13,10 @@ server.get('/', function (req, res) {
   res.render(path.join(builddirectory, 'index.html'));
 });
 
+server.get('/healthcheck', function (req, res) {
+  res.send({status: "ok"})
+});
+
 server.use("/api/review", createProxyMiddleware({
   changeOrigin: true,
   secure: true,
