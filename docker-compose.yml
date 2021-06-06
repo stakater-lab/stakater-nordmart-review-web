@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  webapp:
+    image: node:14-alpine
+    build:
+      context: .
+    environment:
+      - REVIEW_API=https://review-gabbar-dev.apps.devtest.41b996e9.kubeapp.cloud
+    ports:
+      - "8080:4200"
