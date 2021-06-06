@@ -1,6 +1,5 @@
-import { combineReducers, Reducer, ReducersMapObject } from "redux";
-import { store } from "./store";
-import { nestedCombineReducers } from "nested-combine-reducers";
+import {combineReducers, Reducer, ReducersMapObject} from "redux";
+import {store} from "./store";
 import set from "lodash/set";
 import merge from "lodash/merge";
 
@@ -15,7 +14,7 @@ export class ReducerRegister {
     const reducerObj = {};
     set(reducerObj, name, reducer);
     this._reducers = merge(this._reducers, reducerObj);
-    store.replaceReducer(nestedCombineReducers(this._reducers, combineReducers));
+    // store.replaceReducer(nestedCombineReducers(this._reducers));
   }
 
   public remove(name: string) {

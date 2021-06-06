@@ -9,7 +9,7 @@ server.set("headersTimeout", 65 * 1000);
 
 server.use(express.static(path.join(__dirname, 'dist')));
 
-server.get('/',function(req,res) {
+server.get('/', function (req, res) {
   res.render(path.join(builddirectory, 'index.html'));
 });
 

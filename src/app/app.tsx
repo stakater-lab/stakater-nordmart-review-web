@@ -3,7 +3,7 @@ import {Redirect, Route, Switch} from "react-router";
 import {HashRouter} from "react-router-dom";
 import {NotFound} from "./404";
 import {TopMenu} from "./navigation/top-menu";
-import {Products} from "./review/products";
+import {Reviews} from "./review/reviews";
 
 export const App = () => {
   return (
@@ -13,8 +13,12 @@ export const App = () => {
       <Switch>
         <Redirect exact from="/" to="/reviews"/>
 
-        <Route path="/reviews">
-          <Products/>
+        <Route exact path="/reviews">
+          <Reviews/>
+        </Route>
+
+        <Route path="/reviews/:id">
+          <Reviews/>
         </Route>
 
         <Route>

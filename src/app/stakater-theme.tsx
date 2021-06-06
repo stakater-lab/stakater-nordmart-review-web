@@ -113,10 +113,7 @@ export const MuiOverride = createMuiTheme({
           },
         },
       },
-    },
-    MuiOutlinedInput: {
-      margin: "dense",
-    },
+    }
   },
   overrides: {
     MuiCssBaseline: {
@@ -175,12 +172,6 @@ export const MuiOverride = createMuiTheme({
         borderRadius: 0,
         margin: 0,
         fontSize: 14,
-      },
-    },
-    MuiFormLabel: {
-      root: {
-        display: "flex",
-        alignItems: "center",
       },
     },
     MuiCircularProgress: {

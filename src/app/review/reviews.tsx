@@ -1,13 +1,17 @@
 import React from 'react';
+import {useRouteMatch} from "react-router";
+import {Box, Container} from "@material-ui/core";
+import {PRODUCTS} from "../product/ProductDTO";
+import {Product} from "../product/product";
 
-interface IReviewsProps {
+export const Reviews = () => {
+  const {params: {id}} = useRouteMatch<{ id: string }>();
 
-}
-
-export const Reviews = ({}: IReviewsProps) => {
   return (
-    <div>
-      Reviews
-    </div>
+    <Container maxWidth="lg">
+      <Box paddingY={10}>
+        {PRODUCTS.map(p => (<Product key={p.itemId} product={p} showReviews={p.itemId === id}/>))}
+      </Box>
+    </Container>
   );
 };

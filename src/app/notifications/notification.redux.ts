@@ -1,17 +1,18 @@
-import { Action } from "nested-combine-reducers/dist/types";
-import { INotification } from "./INotification";
-import { Epic } from "redux-observable";
-import { delay, switchMap } from "rxjs/operators";
-import { of } from "rxjs";
+import {INotification} from "./INotification";
+import {Epic} from "redux-observable";
+import {delay, switchMap} from "rxjs/operators";
+import {of} from "rxjs";
 import get from "lodash/get";
-import { createSelector } from "reselect";
+import {createSelector} from "reselect";
+import {Action} from "redux";
 
 export const SHOW_NOTIFICATION = "notification/show";
 
 export class ShowNotificationAction implements Action {
   public type = SHOW_NOTIFICATION;
 
-  constructor(public notification: INotification) {}
+  constructor(public notification: INotification) {
+  }
 }
 
 export const HIDE_NOTIFICATION = "notification/hide";
@@ -57,7 +58,7 @@ export const NOTIFICATION_SELECTORS = {
 
 const hideNotification$: Epic = (action$) =>
   action$.ofType(SHOW_NOTIFICATION).pipe(
-    switchMap(({ notification: { duration = 1000 } }: ShowNotificationAction) => {
+    switchMap(({notification: {duration = 1000}}: ShowNotificationAction) => {
       return of(new HideNotificationAction()).pipe(delay(duration));
     }),
   );

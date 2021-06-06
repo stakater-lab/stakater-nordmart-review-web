@@ -1,5 +1,5 @@
-import { Reducer } from "nested-combine-reducers/dist/types";
 import { Epic } from "redux-observable";
+import {Reducer} from "redux";
 
 export interface IRedux {
   key: string;

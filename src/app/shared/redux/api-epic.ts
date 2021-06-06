@@ -1,10 +1,10 @@
-import {Action} from "nested-combine-reducers/dist/types";
 import {ApiAction} from "./api-action";
 import {Epic, ofType} from "redux-observable";
 import {catchError, map, switchMap} from "rxjs/operators";
 import {from} from "rxjs";
 import {AjaxError} from "rxjs/internal-compatibility";
 import {ShowNotificationAction} from "../../notifications/notification.redux";
+import {Action} from "redux";
 
 type ActionConstructor<T> = new (origin: T, ...rest: any[]) => Action;
 type ActionFailedConstructor<T> = new (error: Error, origin?: T) => Action;

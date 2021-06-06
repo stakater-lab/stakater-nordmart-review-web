@@ -35,24 +35,10 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
-          test: /\.scss$/,
-          use: [
-            {
-              loader: "style-loader",
-            },
-            {
-              loader: "css-loader",
-            },
-            {
-              loader: "sass-loader",
-            },
-          ],
-        },
-        {
           test: /\.tsx?$/,
-          loader: "awesome-typescript-loader",
+          loader: "ts-loader",
           options: {
-            configFileName: "tsconfig.app.json",
+            configFile: "tsconfig.app.json",
           },
         },
         {
