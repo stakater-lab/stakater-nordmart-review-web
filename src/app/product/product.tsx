@@ -1,5 +1,14 @@
 import React, {useMemo, useState} from 'react';
-import {Accordion, AccordionDetails, AccordionSummary, Box, Divider, Grid, styled, Typography} from "@material-ui/core";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Box,
+  CircularProgress,
+  Grid,
+  styled,
+  Typography
+} from "@material-ui/core";
 import {ProductDTO} from "./ProductDTO";
 import {useHistory} from "react-router";
 import {ExpandMore} from "@material-ui/icons";
@@ -20,7 +29,7 @@ export const Product = ({product, showReviews}: IProductProps) => {
   const history = useHistory();
   const [reload, setReload] = useState<any>();
   const $reviews = useMemo(() => getReviewAPI(product.itemId), [product, reload]);
-  const [reviews] = useAPI($reviews, []);
+  const [reviews, isFetching] = useAPI($reviews, []);
 
   const viewReview = () => {
     if (showReviews) {
@@ -66,10 +75,11 @@ export const Product = ({product, showReviews}: IProductProps) => {
             <Box marginTop="auto">
               <Review expanded={showReviews}>
                 <AccordionSummary
-                  expandIcon={<ExpandMore/>}
+                  expandIcon={isFetching ? <CircularProgress color="secondary" variant={"indeterminate"} size={24}/> :
+                    <ExpandMore/>}
                   onClick={viewReview}
                 >
-                  <Typography>Reviews</Typography>
+                  <Typography>Reviews({reviews.length})</Typography>
                 </AccordionSummary>
 
                 <AccordionDetails>
@@ -92,9 +102,7 @@ export const Product = ({product, showReviews}: IProductProps) => {
                     </Grid>
 
                     <Grid item xs={12}>
-                      <Box padding={2}>
-                        <Divider/>
-                        <br/>
+                      <Box padding={4} bgcolor="white">
                         <Typography gutterBottom>
                           <b>Add your review</b>
                         </Typography>
