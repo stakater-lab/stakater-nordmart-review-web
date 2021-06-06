@@ -1,7 +1,7 @@
 FROM node:14-alpine as builder
 
-LABEL name="Managed Openshift Frontend" \
-  maintainer="Stakater <hello@stakater.com"
+LABEL name="Nordmart review" \
+  maintainer="Quang <quang@stakater.com"
 
 # set workdir
 RUN mkdir -p $HOME/application
@@ -19,9 +19,6 @@ ARG REVIEW_API
 
 # build the application
 RUN npm run build
-
-# remove redundant files
-RUN rm -rf lib/**/*.spec.js
 
 EXPOSE 4200
 
