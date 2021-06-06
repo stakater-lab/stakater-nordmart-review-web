@@ -1,7 +1,7 @@
 {
-  "name": "stakater-cloud",
+  "name": "nordmart-review",
   "version": "0.0.0",
-  "description": "Stakater cloud management",
+  "description": "Nordmart review demo app",
   "browserslist": [
     "> 1%",
     "last 2 versions",
@@ -10,13 +10,14 @@
   "main": "",
   "keywords": [
     "Stakater",
-    "Cloud"
+    "Nordmart",
+    "Review"
   ],
   "author": "Quang Vu",
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --mode development",
-    "start:dev": "npm start -- --env SECURE_GW_ENDPOINT=https://gateway-veeru-dev.apps.binero.06p407u4.kubeapp.cloud --env SSO_URL=https://iam-keycloak-veeru-dev.apps.devtest.41b996e9.kubeapp.cloud/auth/ --env SSO_CLIENT_ID=stakater-nordmart-web --env SSO_REALM=nordmart",
+    "start:dev": "npm start",
     "build": "webpack --mode production"
   },
   "dependencies": {
