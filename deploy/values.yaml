@@ -8,7 +8,6 @@ application:
     annotations:
       argocd.argoproj.io/sync-wave: "-1"
     tenant: gabbar
-
   deployment:
     imagePullSecrets: nexus-docker-config-forked
     additionalLabels:
@@ -19,16 +18,17 @@ application:
     podLabels:
       maistra.io/expose-route: "true"
     volumes: {}
-    image:
-      repository: stakater/stakater-nordmart-web
-      tag: v0.0.7
+    image:    
+      # replaced by CI pipeline
+      repository: {{ IMAGE }}
+      # replaced by CI pipeline     
+      tag: {{ TAG }}
     env:
     - name: PORT
       value: "4200"
     - name: REVIEW_API
-      value: "https://review-gabbar-dev.apps.devtest.41b996e9.kubeapp.cloud"
-    - name: JAEGER_ENDPOINT
-      value: "http://jaeger-collector.istio-system:14268/api/traces"
+      # This is hardcoded!
+      value: "https://review-gabbar-dev.apps.binero-test.8sdzwd1l.kubeapp.cloud"
     probes:
       readinessProbe:
         failureThreshold: 3
