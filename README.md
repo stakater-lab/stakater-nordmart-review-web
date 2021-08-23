@@ -1,7 +1,6 @@
 # stakater-nordmart-review-ui
 Management interface for reviews
 test
-a
   
 ## Build tools
 
