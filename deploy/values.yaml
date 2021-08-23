@@ -63,7 +63,7 @@ application:
    enabled: false
   route:
     enabled: true
-    labels:
+    additionalLabels:
        router: default
   forecastle:
     enabled: true
