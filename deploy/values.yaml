@@ -20,9 +20,9 @@ application:
     volumes: {}
     image:    
       # replaced by CI pipeline
-      repository: {{ IMAGE }}
+      repository: IMAGE
       # replaced by CI pipeline     
-      tag: {{ TAG }}
+      tag: TAG
     env:
     - name: PORT
       value: "4200"
@@ -63,6 +63,8 @@ application:
    enabled: false
   route:
     enabled: true
+    additionalLabels:
+       router: default
   forecastle:
     enabled: true
     displayName: "Review Web"
