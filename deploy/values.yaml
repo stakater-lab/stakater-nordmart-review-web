@@ -63,6 +63,8 @@ application:
    enabled: false
   route:
     enabled: true
+    labels:
+       router: default
   forecastle:
     enabled: true
     displayName: "Review Web"
