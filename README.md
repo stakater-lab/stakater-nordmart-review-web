@@ -35,4 +35,3 @@ Management interface for reviews
 3. After successful run, server is running at http://localhost:8080
 
 
-
