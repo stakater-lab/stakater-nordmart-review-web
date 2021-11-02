@@ -1,13 +1,11 @@
 application:
   applicationName: "review-web"
-  space:
+  namespace:
     enabled: true
     additionalLabels:
       kind: pr
       team: gabbar
-    annotations:
-      argocd.argoproj.io/sync-wave: "-1"
-    tenant: gabbar
+      stakater.com/tenant: gabbar
   deployment:
     imagePullSecrets: nexus-docker-config-forked
     additionalLabels:
