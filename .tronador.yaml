@@ -6,4 +6,7 @@ application:
         image:
           repository: {{APPLICATION_IMAGE_NAME}}
           tag: {{APPLICATION_IMAGE_TAG}}
-         
+  namespaceLabels:
+    abc: abc
+    asa: asasa
+    asd: asd
