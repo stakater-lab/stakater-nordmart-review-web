@@ -1,0 +1,8 @@
+application:
+  chart_path: deploy
+  value_overrides:
+    application:
+      deployment:
+        image:
+          repository: {{APPLICATION_IMAGE_NAME}}
+          tag: {{APPLICATION_IMAGE_TAG}}
