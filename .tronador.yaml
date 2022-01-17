@@ -1,5 +1,15 @@
 application:
   chart_path: deploy
+  namespaceLabels:
+    label: value
+    stakater.com/tenant: alpha
+    owner: stakater
+  values_from:
+  - configMapKeyRef:
+      name: default-values
+      namespace: my-ns
+      key: values.yaml
+      optional: false
   value_overrides:
     application:
       deployment:
