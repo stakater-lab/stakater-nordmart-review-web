@@ -8,11 +8,14 @@ application:
     stakater.com/tenant: alpha
     owner: stakater
   values_from:
-  - configMapKeyRef:
-      name: default-values
-      namespace: my-ns
-      key: values.yaml
-      optional: false
+  - secretKeyRef:
+      name: nordmart-bot
+      namespace: stakater-tronador
+      key: password
+  - secretKeyRef:
+      name: nordmart-bot
+      namespace: stakater-tronador
+      key: username
   value_overrides:
     application:
       deployment:
