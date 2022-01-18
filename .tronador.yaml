@@ -1,5 +1,8 @@
 application:
   chart_path: deploy
+  secret_ref:
+    namespace: gabbar-build
+    name: git-auth-forked
   namespaceLabels:
     label: value
     stakater.com/tenant: alpha
