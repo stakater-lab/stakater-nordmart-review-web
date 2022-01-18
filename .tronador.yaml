@@ -7,15 +7,6 @@ application:
     label: value
     stakater.com/tenant: alpha
     owner: stakater
-  values_from:
-  - secretKeyRef:
-      name: nordmart-bot
-      namespace: stakater-tronador
-      key: password
-  - secretKeyRef:
-      name: nordmart-bot
-      namespace: stakater-tronador
-      key: username
   value_overrides:
     application:
       deployment:
