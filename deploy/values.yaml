@@ -1,5 +1,7 @@
 application:
+
   applicationName: "review-web"
+  
   deployment:
     imagePullSecrets: nexus-docker-config-forked
     additionalLabels:
@@ -40,23 +42,21 @@ application:
         httpGet:
           path: /health
           port: 4200
+          
   service:
     ports:
     - port: 8080
       name: http
       protocol: TCP
       targetPort: 4200
+      
   rbac:
-    create: true
     serviceAccount:
-      create: true
       enabled: true
-  configMap:
-   enabled: false
+        
   route:
     enabled: true
-    additionalLabels:
-       router: default
+    
   forecastle:
     enabled: true
     displayName: "Review Web"
