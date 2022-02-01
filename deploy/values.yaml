@@ -13,10 +13,8 @@ application:
       maistra.io/expose-route: "true"
     volumes: {}
     image:    
-      # replaced by CI pipeline
-      repository: IMAGE
-      # replaced by CI pipeline     
-      tag: TAG
+      repository: REPLACED_BY_CI_PIPELINE
+      tag: REPLACED_BY_CI_PIPELINE    
     env:
     - name: PORT
       value: "4200"
