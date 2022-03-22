@@ -1,4 +1,4 @@
-FROM node:14-alpine as builder
+FROM node:14 as builder
 
 LABEL name="Nordmart review" \
   maintainer="Quang <quang@stakater.com"
