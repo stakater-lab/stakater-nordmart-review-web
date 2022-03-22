@@ -16,11 +16,11 @@ application:
       repository: REPLACED_BY_CI_PIPELINE
       tag: REPLACED_BY_CI_PIPELINE    
     env:
-    - name: PORT
-      value: "4200"
-    - name: REVIEW_API
+      PORT:
+        value: "4200"
+      REVIEW_API:
       # This is hardcoded!
-      value: "https://review-gabbar-dev.apps.binero-test.8sdzwd1l.kubeapp.cloud"
+        value: "https://review-gabbar-dev.apps.binero-test.8sdzwd1l.kubeapp.cloud"
     probes:
       readinessProbe:
         failureThreshold: 3
