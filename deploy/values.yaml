@@ -1,7 +1,7 @@
 application:
 
   applicationName: "review-web"
-  
+
   deployment:
     imagePullSecrets: nexus-docker-config-forked
     additionalLabels:
@@ -12,15 +12,15 @@ application:
     podLabels:
       maistra.io/expose-route: "true"
     volumes: {}
-    image:    
+    image:
       repository: REPLACED_BY_CI_PIPELINE
-      tag: REPLACED_BY_CI_PIPELINE    
+      tag: REPLACED_BY_CI_PIPELINE
     env:
-    - name: PORT
-      value: "4200"
-    - name: REVIEW_API
+      PORT:
+        value: "4200"
+      REVIEW_API:
       # This is hardcoded!
-      value: "https://review-gabbar-dev.apps.binero-test.8sdzwd1l.kubeapp.cloud"
+        value: "https://review-gabbar-dev.apps.binero-test.8sdzwd1l.kubeapp.cloud"
     probes:
       readinessProbe:
         failureThreshold: 3
@@ -40,21 +40,21 @@ application:
         httpGet:
           path: /health
           port: 4200
-          
+
   service:
     ports:
     - port: 8080
       name: http
       protocol: TCP
       targetPort: 4200
-      
+
   rbac:
     serviceAccount:
       enabled: true
-        
+
   route:
     enabled: true
-    
+
   forecastle:
     enabled: true
     displayName: "Review Web"
