@@ -10,7 +10,7 @@ export const Reviews = () => {
   return (
     <Container maxWidth="lg">
       <Box paddingTop={10}>
-        <Typography color="primary" variant="h4">Review</Typography>
+        <Typography color="primary" variant="h4">Review UI</Typography>
       </Box>
 
       <Box paddingY={10}>
