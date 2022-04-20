@@ -109,6 +109,7 @@ module.exports = (env, argv) => {
 
     devServer: {
       port: 4200,
+      writeToDisk: true,
       contentBase: sourcePath,
       // https: true,
       inline: true,
