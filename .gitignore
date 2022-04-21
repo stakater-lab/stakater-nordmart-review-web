@@ -51,4 +51,4 @@ tilt_modules/
 
 # Helm
 /deploy/charts
-Chart.lock
+/deploy/Chart.lock
