@@ -13,8 +13,8 @@ application:
       maistra.io/expose-route: "true"
     volumes: {}
     image:
-      repository: review-web
-      tag: any-version
+      repository: REPLACED_BY_CI_PIPELINE
+      tag: REPLACED_BY_CI_PIPELINE
     env:
       PORT:
         value: "4200"

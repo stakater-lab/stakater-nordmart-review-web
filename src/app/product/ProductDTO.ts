@@ -41,7 +41,7 @@ export class ProductDTO {
 
 export const PRODUCTS = [{
   "itemId": "329199",
-  "name": "JBoss",
+  "name": "Forge Laptop Sticker",
   "description": "JBoss Community Forge Project Sticker",
   "price": 8.5
 }, {
