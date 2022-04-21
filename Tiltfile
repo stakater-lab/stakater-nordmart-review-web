@@ -5,8 +5,11 @@ settings = read_json('tilt_options.json', default={})
 if settings.get("namespace"):
   namespace =  settings.get("namespace")
 
-# if settings.get("default_registry"):
-#   default_registry(settings.get("default_registry").format(namespace), host_from_cluster='image-registry.openshift-image-registry.svc:5000/{}'.format(namespace))
+# Lines 11 & 12 are to be commented out if you are using another Tiltfile that loads this Tiltfile. 
+# "default_registry" is to be set only once per tilt instance run by `tilt up`
+ 
+if settings.get("default_registry"):
+  default_registry(settings.get("default_registry").format(namespace), host_from_cluster='image-registry.openshift-image-registry.svc:5000/{}'.format(namespace))
 
 if settings.get("allow_k8s_contexts"):
   allow_k8s_contexts(settings.get("allow_k8s_contexts"))
