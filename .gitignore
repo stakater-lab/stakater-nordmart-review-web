@@ -44,3 +44,10 @@ target
 
 #reports
 reports
+
+# Tilt
+tilt_options.json
+tilt_modules/
+
+# Helm
+/deploy/charts
