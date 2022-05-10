@@ -30,5 +30,6 @@ Management interface for reviews
 ### Docker
 
 1. `docker-compose up`
-2. `npm start` to start dev server running the app in development mode
-3. After successful run, server is running at http://localhost:8080
+2. 
+3. `npm start` to start dev server running the app in development mode
+4. After successful run, server is running at http://localhost:8080
