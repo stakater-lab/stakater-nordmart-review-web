@@ -59,3 +59,11 @@ application:
     enabled: true
     displayName: "Review Web"
     group: "Nordmart"
+
+  ## Endpoint Montior
+  endpointMonitor:
+    enabled: true
+    # add uptime robot additional config
+    additionalConfig:
+      uptimeRobotConfig:
+        alertContacts: "3514554"
