@@ -16,7 +16,6 @@ RUN npm ci
 # build the application
 RUN npm run build
 
-# expose 4200
 EXPOSE 4200
 
 CMD ["node", "server.js"]
