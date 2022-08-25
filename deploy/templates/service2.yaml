@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: review-web
+    appVersion: "REPLACED_BY_CI_PIPELINE"
+    group: com.stakater.platform
+    provider: stakater
+    team: stakater
+    chart: "application-1.1.14"
+    release: "release-name"
+    heritage: "Helm"
+  name: review-web
+  namespace: default
+spec:
+  my-new-field: true
+  selector:
+    app: review-web
+    maistra.io/expose-route: "true"
+  ports:
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: 4200
