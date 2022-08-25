@@ -55,9 +55,10 @@ application:
   route:
     enabled: true
 
-  forecastle:
+      forecastle:
     enabled: true
-    displayName: "Review Web"
+    displayName: "Revi
+    ew Web"
     group: "Nordmart"
 
   ## Endpoint Montior
