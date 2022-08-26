@@ -1,6 +1,6 @@
 # stakater-nordmart-review-ui
 Management interface for reviews
- 
+
 ## Build tools
 
 - Node
@@ -30,3 +30,4 @@ Management interface for reviews
 1. `docker-compose up`
 2. `npm start` to start dev server running the app in development mode
 3. After successful run, server is running at http://localhost:8080
+
