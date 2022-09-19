@@ -56,7 +56,7 @@ module.exports = (env, argv) => {
           test: /\.(gif|png|jpg|jpeg)$/,
           loader: "url-loader",
           options: {
-            limit: 8192,
+            limit: false,
           },
         },
         {
