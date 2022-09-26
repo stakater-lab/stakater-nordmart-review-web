@@ -13,9 +13,10 @@ COPY . .
 # install dependencies
 RUN npm ci
 ARG VERSION
+ARG MATOMO_BASE_URL
 
 # build the application
-RUN npm run build -- --env VERSION=$VERSION
+RUN npm run build -- --env VERSION=$VERSION MATOMO_BASE_URL=$MATOMO_BASE_URL
 
 EXPOSE 4200
 
