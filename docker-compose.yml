@@ -6,6 +6,7 @@ services:
       context: .
       args:
         - VERSION=v1.00
+        - MATOMO_BASE_URL=https://sorcerers-matomo-sorcerers-dev.apps.devtest.vxdqgl7u.kubeapp.cloud
     environment:
       - REVIEW_API=https://review-gabbar-dev.apps.devtest.41b996e9.kubeapp.cloud
     ports:
