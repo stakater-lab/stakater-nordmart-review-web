@@ -77,7 +77,6 @@ module.exports = (env, argv) => {
       new webpack.DefinePlugin({
         PRODUCTION: !isDev,
         VERSION: JSON.stringify(env.VERSION),
-        MATOMO_BASE_URL: JSON.stringify(env.MATOMO_BASE_URL),
       }),
       !isDev && new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({

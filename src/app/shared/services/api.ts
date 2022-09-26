@@ -7,4 +7,5 @@ export const API = {
   productPromotion: "/api/promotions/{productId}",
   shoppingCart: "/api/cart/{cartId}",
   checkout: "/api/cart/checkout/{cartId}",
+  matomoUrl: "/matomo"
 };
