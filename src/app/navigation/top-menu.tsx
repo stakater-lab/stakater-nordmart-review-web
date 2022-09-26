@@ -13,7 +13,7 @@ export const TopMenu = () => {
           <Box display="flex" marginRight="auto">
             <StakaterLogo height={24}/>
             <Typography variant={"h5"}>Stakater</Typography>
-            <Typography variant={"caption"}>Reviews {VERSION}</Typography>
+            <Typography variant={"caption"}>Reviews Deployment A</Typography>
           </Box>
         </Toolbar>
       </Container>

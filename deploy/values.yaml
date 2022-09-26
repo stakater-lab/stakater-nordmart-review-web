@@ -21,6 +21,8 @@ application:
       REVIEW_API:
       # This is hardcoded!
         value: "https://review-gabbar-dev.apps.devtest.vxdqgl7u.kubeapp.cloud"
+      MATOMO_BASE_URL:
+        value: "https://sorcerers-matomo-sorcerers-dev.apps.devtest.vxdqgl7u.kubeapp.cloud/"
     probes:
       readinessProbe:
         failureThreshold: 3
