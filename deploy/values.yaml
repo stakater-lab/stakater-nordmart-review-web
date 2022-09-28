@@ -55,11 +55,6 @@ application:
   route:
     enabled: true
 
-  forecastle:
-    enabled: true
-    displayName: "Review Web"
-    group: "Nordmart"
-
   ## Endpoint Montior
   endpointMonitor:
     enabled: true
