@@ -14,7 +14,7 @@ COPY . .
 RUN npm ci
 ARG VERSION
 
-# build the application
+## build the application
 RUN npm run build -- --env VERSION=$VERSION
 
 EXPOSE 4200
