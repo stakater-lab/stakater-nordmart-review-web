@@ -17,6 +17,10 @@ server.get('/health', function (req, res) {
   res.send({status: "ok"})
 });
 
+server.get('/matomo', function (req, res) {
+  res.send({url: process.env.MATOMO_BASE_URL})
+});
+
 server.use("/api/review", createProxyMiddleware({
   changeOrigin: true,
   secure: true,
