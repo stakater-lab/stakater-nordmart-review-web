@@ -3,8 +3,7 @@ application:
   applicationName: "review-web"
 
   deployment:
-    imagePullSecrets: nexus-docker-config-forked
-    
+    imagePullSecrets: nexus-docker-config-forked    
     env:
       PORT:
         value: "4200"
@@ -33,17 +32,17 @@ application:
 
   service:
     ports:
-    - port: 8080
-      name: http
+    - name: http
+      port: 8080
       protocol: TCP
       targetPort: 4200
+
+  route:
+    enabled: true
 
   rbac:
     serviceAccount:
       enabled: true
-
-  route:
-    enabled: true
 
   forecastle:
     enabled: true
