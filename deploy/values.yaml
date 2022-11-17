@@ -4,22 +4,12 @@ application:
 
   deployment:
     imagePullSecrets: nexus-docker-config-forked
-    additionalLabels:
-      appCategory: "frontend"
-    additionalPodAnnotations:
-      sidecar.istio.io/inject: "true"
-      sidecar.istio.io/rewriteAppHTTPProbers: "true"
-    podLabels:
-      maistra.io/expose-route: "true"
-    volumes: {}
-    image:
-      repository: REPLACED_BY_CI_PIPELINE
-      tag: REPLACED_BY_CI_PIPELINE
+    
     env:
       PORT:
         value: "4200"
       REVIEW_API:
-      # This is hardcoded!
+        # This is hardcoded!
         value: "https://review-gabbar-dev.apps.devtest.vxdqgl7u.kubeapp.cloud"
     probes:
       readinessProbe:
