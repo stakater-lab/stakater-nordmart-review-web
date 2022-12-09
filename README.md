@@ -5,7 +5,6 @@ Management interface for reviews
 
 - Node
 - Webpack
-
 ## Tech stack
 
 - Typescript
