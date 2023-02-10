@@ -17,6 +17,10 @@ server.get('/health', function (req, res) {
   res.send({status: "ok"})
 });
 
+server.get('/api/secrets', function (req, res) {
+  res.send({PAGE_TITLE: process.env.PAGE_TITLE})
+});
+
 server.use("/api/review", createProxyMiddleware({
   changeOrigin: true,
   secure: true,
