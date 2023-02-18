@@ -14,3 +14,8 @@ export const getReviewAPI = (productId: string): Observable<ReviewDTO[]> => {
 export const addReviewAPI = (review: IReviewPayload) => {
   return httpClient.post("/api/review/{productId}/{customerName}/{rating}/{text}", {}, {params: review as any});
 };
+
+export const getSecretAPI = (): Observable<any> => {
+  return httpClient.get("/api/secrets")
+    .pipe(map(res => res.response));
+};
