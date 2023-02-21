@@ -3,7 +3,10 @@ application:
   applicationName: "review-web"
 
   deployment:
-    imagePullSecrets: nexus-docker-config-forked    
+    imagePullPolicy: Always
+    image: 
+      repository: docker.io/stakater/stakater-nordmart-review-ui
+      tag: 1.0.22    
     env:
       PORT:
         value: "4200"
@@ -45,14 +48,4 @@ application:
       enabled: true
 
   forecastle:
-    enabled: true
-    displayName: "Review Web"
-    group: "Nordmart"
-
-  ## Endpoint Montior
-  endpointMonitor:
-    enabled: true
-    # add uptime robot additional config
-    additionalConfig:
-      uptimeRobotConfig:
-        alertContacts: "3514554"
+    enabled: false
