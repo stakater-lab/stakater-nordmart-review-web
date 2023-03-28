@@ -12,7 +12,12 @@ application:
         value: "4200"
       REVIEW_API:
         # This is hardcoded!
-        value: "https://review-gabbar-dev.apps.devtest.vxdqgl7u.kubeapp.cloud"
+        value: "https://review-webinar-dev.apps.preprod.jlvwjls8.kubeapp.cloud"
+      PAGE_TITLE:
+         valueFrom:
+            secretKeyRef:
+              name: review-web-review-ui-secret
+              key: page_title
     probes:
       readinessProbe:
         failureThreshold: 3
@@ -49,3 +54,15 @@ application:
 
   forecastle:
     enabled: false
+
+  externalSecret:
+    enabled: true
+    secretStore:
+      name: tenant-vault-secret-store
+    refreshInterval: "1m"
+    files:
+      review-ui-secret:
+        data:
+          page_title:
+            remoteRef:
+              key: nordmart-review-ui-page-title
