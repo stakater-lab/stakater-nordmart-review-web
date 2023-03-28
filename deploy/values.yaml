@@ -62,7 +62,5 @@ application:
     refreshInterval: "1m"
     files:
       review-ui-secret:
-        data:
-          page_title:
-            remoteRef:
-              key: nordmart-review-ui-page-title
+        dataFrom:
+        - key: nordmart-review-ui-page-title
