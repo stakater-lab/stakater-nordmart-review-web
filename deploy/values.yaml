@@ -16,7 +16,7 @@ application:
       PAGE_TITLE:
          valueFrom:
             secretKeyRef:
-              name: review-ui
+              name: review-web-review-ui-secret
               key: page_title
     probes:
       readinessProbe:
