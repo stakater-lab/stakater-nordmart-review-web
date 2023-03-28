@@ -63,4 +63,4 @@ application:
     files:
       review-ui-secret:
         dataFrom:
-        - key: nordmart-review-ui-page-title
+        - key: review-ui/dev/nordmart-review-ui-page-title
