@@ -17,6 +17,7 @@ ARG VERSION
 # build the application
 RUN npm run build -- --env VERSION=$VERSION
 
+# expose port
 EXPOSE 4200
 
 CMD ["node", "server.js"]
